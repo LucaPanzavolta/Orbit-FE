@@ -1,0 +1,16 @@
+<div id="login-wrapper">
+
+  <form id="login-form" (ngSubmit)="login()">
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Email" [formControl]="emailFormControl">
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Password" [formControl]="passwordFormControl">
+    </mat-form-field>
+
+    <div id="login-button">
+      <button mat-raised-button color="primary">Login</button>
+    </div>
+  </form>
+</div>
