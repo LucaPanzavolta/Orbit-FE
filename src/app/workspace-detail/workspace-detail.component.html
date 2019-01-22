@@ -1,0 +1,76 @@
+<h1>
+  Entries
+</h1>
+<button mat-raised-button color="primary" (click)="addWorkspace()">Add Entry</button>
+
+<div id="flex-wrapper">
+
+  <div id="cards" *ngFor="let ent of entries">
+    <mat-card class="card" (click)="compare(ent)">
+      <mat-card-header>
+        <div mat-card-avatar class="image"></div>
+        <mat-card-title>{{ent.name}}</mat-card-title>
+        <mat-card-subtitle>Developer</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-button (click)="showGraph(ent)">SEE STATS</button>
+        <button mat-button (click)="addSnapshot(ent)">ADD SNAPSHOT</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+</div>
+
+<!-- Graph and Add Snapshot Card -->
+
+<div id="second-row">
+  <div *ngIf="barChartData">
+    <div style="display: block">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+        [chartType]="barChartType" width="700" height="500">
+      </canvas>
+    </div>
+    <button mat-raised-button color="primary" (click)="comparing = true">Compare</button>
+  </div>
+
+  <div id="new-snapshot-card" *ngIf="addingSnapshot">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Add new Snapshot</mat-card-title>
+        <mat-card-subtitle>{{addingSnapshot.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <!-- Form beginning -->
+        <div id="flex-form">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select placeholder="Select metric">
+              <mat-option value="frontend">Frontend</mat-option>
+              <mat-option value="backend">Backend</mat-option>
+              <mat-option value="testing">Testing</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="number" placeholder="Score">
+          </mat-form-field>
+
+          <mat-form-field>
+            <textarea matInput placeholder="Comments"></textarea>
+          </mat-form-field>
+
+        </div>
+        <!-- Form End -->
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button id="add-snapshot-button" mat-button>CONFIRM</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

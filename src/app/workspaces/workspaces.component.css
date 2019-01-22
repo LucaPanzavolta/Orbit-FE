@@ -1,0 +1,30 @@
+h1 {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.workspace-content {
+  margin-top: 30px;
+}
+
+.flex-workspaces-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: inline-block;
+  max-width: 300px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.image {
+  background-image: url('../../assets/codeworks-logo.png');
+  background-size: cover;
+}
+
+#new-workspace-card {
+  margin-top: 30px;
+}
