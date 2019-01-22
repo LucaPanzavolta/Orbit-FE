@@ -28,3 +28,13 @@ h1 {
 #new-workspace-card {
   margin-top: 30px;
 }
+
+#flex-form {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+
+#flex-form > * {
+  width: 100%;
+}

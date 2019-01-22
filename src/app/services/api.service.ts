@@ -35,14 +35,15 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/dashboard`, { headers: headers });
   }
 
-  addWorkspace(category, wsName) {
+  addWorkspace(category, wsName, metricsArr) {
     const payload = JSON.stringify({
       name: wsName,
-      category: category
+      category: category,
+      metricLabels: metricsArr
     });
 
     let headers = this.setHeadersWithToken();
-    return this.http.post(`${this.baseUrl}/dashboard`, payload, { headers: headers })
+    return this.http.post(`${this.baseUrl}/dashboard`, payload, { headers: headers });
   }
 
   //ENTRIES

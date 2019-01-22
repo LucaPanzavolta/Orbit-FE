@@ -6,7 +6,7 @@
 <div id="flex-wrapper">
 
   <div id="cards" *ngFor="let ent of entries">
-    <mat-card class="card" (click)="compare(ent)">
+    <mat-card class="card">
       <mat-card-header>
         <div mat-card-avatar class="image"></div>
         <mat-card-title>{{ent.name}}</mat-card-title>
@@ -24,15 +24,29 @@
 <!-- Graph and Add Snapshot Card -->
 
 <div id="second-row">
+
+  <!-- Graph -->
   <div *ngIf="barChartData">
+
+    <mat-form-field>
+      <mat-select placeholder="Select metric" [formControl]="showCorrectGraphFormControl" (selectionChange)="showGraph(null, $event)">
+        <div *ngFor="let label of metricLabels">
+          <mat-option value={{label}}>{{label}}</mat-option>
+        </div>
+      </mat-select>
+    </mat-form-field>
+
     <div style="display: block">
       <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
-        [chartType]="barChartType" width="700" height="500">
+        [chartType]="barChartType" width="1000" height="500">
       </canvas>
     </div>
-    <button mat-raised-button color="primary" (click)="comparing = true">Compare</button>
+    <button mat-raised-button color="primary" (click)="generateGraph()">Generate Graph</button>
+    <!-- <button mat-raised-button color="primary" (click)="comparing = true">Compare</button> -->
   </div>
+  <!-- Graph Endi -->
 
+  <!-- Add new Snapshot Card -->
   <div id="new-snapshot-card" *ngIf="addingSnapshot">
     <mat-card>
       <mat-card-header>
@@ -50,9 +64,9 @@
 
           <mat-form-field>
             <mat-select placeholder="Select metric">
-              <mat-option value="frontend">Frontend</mat-option>
-              <mat-option value="backend">Backend</mat-option>
-              <mat-option value="testing">Testing</mat-option>
+              <div *ngFor="let label of metricLabels">
+                <mat-option value="label">{{label}}</mat-option>
+              </div>
             </mat-select>
           </mat-form-field>
 

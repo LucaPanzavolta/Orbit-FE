@@ -9,7 +9,7 @@ import { map, tap } from 'rxjs/operators';
 
 export class StoreService {
 
-  private workspaces;
+  public workspaces;
   public workspaces$: Subject<any> = new Subject();
 
   public entries;
@@ -39,31 +39,26 @@ export class StoreService {
 
   getWorkspaces() {
     this.apiService.getWorkspaces()
-      .subscribe(data => {
-        console.log('Retrieved workspaces in getWorkspaces (STORE S.) ', data);
+      .subscribe((data: any) => {
         this.workspaces = data.workspaces;
-        console.log('data.workspaces in getWorkspaces ', data.workspaces);
-        this.workspaces$.next(data.workspaces);
+        this.workspaces$.next(this.workspaces);
       });
-
-    //return this.workspaces$;
   }
 
-  addWorkspace(category, wsName) {
-    this.apiService.addWorkspace(category, wsName)
+  addWorkspace(category, wsName, metricsArr) {
+    this.apiService.addWorkspace(category, wsName, metricsArr)
       .subscribe(data => {
-        console.log('Retrieved data in addWorkspace (STORE S.)', data);
-        console.log('old state of workspaces ', this.workspaces);
-        this.workspaces$.next([...this.workspaces, data]);
+        this.workspaces = [...this.workspaces, data];
+        this.workspaces$.next(this.workspaces);
       });
   }
 
   getEntries(workspaceId) {
     this.apiService.getEntries(workspaceId)
-      /* .pipe(map(response => { console.log('data in store service ', response); return this.entries = response }))
-      .pipe(tap((entries: any[]) => this.entries$.next(entries))); */
-      .subscribe(data => { console.log('in store service ', data); this.entries$.next(data) })
-
+      .subscribe(data => { console.log('in store service ', data); this.entries$.next(data) });
     return this.entries$;
   }
 }
+
+/* .pipe(map(response => { console.log('data in store service ', response); return this.entries = response }))
+.pipe(tap((entries: any[]) => this.entries$.next(entries))); */
