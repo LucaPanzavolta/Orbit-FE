@@ -30,17 +30,18 @@ export class WorkspacesComponent implements OnInit {
   }
 
   addWorkspace() {
-    console.log(this.categoryFormControl.value);
-    console.log(this.wsNameFormControl.value);
     this.storeService.addWorkspace(this.categoryFormControl.value, this.wsNameFormControl.value)
   }
 
 
   ngOnInit() {
-    /* this.storeService.getWorkspaces()
-      .subscribe(workspaces => this.workspaces = workspaces); */
+    this.storeService.getWorkspaces()
+    /*  .subscribe(workspaces => this.workspaces = workspaces); */
 
-    this.storeService.workspaces$.subscribe(workspaces => this.workspaces = workspaces);
+    this.storeService.workspaces$.subscribe(workspaces => {
+      console.log('New workspaces received in component ', workspaces);
+      this.workspaces = workspaces;
+    });
   }
 
 }

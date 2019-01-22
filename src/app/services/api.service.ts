@@ -24,7 +24,6 @@ export class ApiService {
       "Content-Type": "application/json",
       "Authorization": `Basic ${base64Encoded}`
     });
-    console.log('headers from login', headers);
 
     return this.http.get(`${this.baseUrl}/log-in`, { headers: headers })
       .pipe(catchError(res => res.error.errors));

@@ -9,7 +9,7 @@ import { map, tap } from 'rxjs/operators';
 
 export class StoreService {
 
-  public workspaces;
+  private workspaces;
   public workspaces$: Subject<any> = new Subject();
 
   public entries;
@@ -25,6 +25,7 @@ export class StoreService {
   login(email, password) {
     return this.apiService.login(email, password)
       .pipe(map(res => {
+        //if successfull login
         if (res.token) {
           localStorage.setItem('currentUser', JSON.stringify(res));
           //setting internal private property
@@ -41,6 +42,7 @@ export class StoreService {
       .subscribe(data => {
         console.log('Retrieved workspaces in getWorkspaces (STORE S.) ', data);
         this.workspaces = data.workspaces;
+        console.log('data.workspaces in getWorkspaces ', data.workspaces);
         this.workspaces$.next(data.workspaces);
       });
 

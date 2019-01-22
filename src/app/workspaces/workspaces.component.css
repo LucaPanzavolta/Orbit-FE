@@ -10,13 +10,14 @@ h1 {
 .flex-workspaces-wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card {
   display: inline-block;
   max-width: 300px;
   margin-right: 30px;
-
+  margin-bottom: 30px;
 }
 
 .image {
