@@ -28,6 +28,10 @@ export class LoginComponent implements OnInit {
     Validators.required
   ]);
 
+  checkForToken():void {
+    
+  }
+
   login(): void {
     console.log('Login attempt.....');
     this.storeService.login(this.emailFormControl.value, this.passwordFormControl.value)
@@ -42,6 +46,22 @@ export class LoginComponent implements OnInit {
         }
       });
   }
+
+  signup(): void {
+    console.log('Sign Up attempt.....');
+    this.storeService.signup(this.nameFormControl.value, this.emailFormControl.value, this.passwordFormControl.value)
+      .subscribe(res => {
+        console.log('Data retrieved from Sign Up route ', res);
+
+        if (res.token) {
+          this.router.navigateByUrl('/dashboard');
+        } else {
+          console.log(res);
+          alert(res);
+        }
+      });
+  }
+
 
   ngOnInit() {
 

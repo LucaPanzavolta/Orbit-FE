@@ -29,6 +29,17 @@ export class ApiService {
       .pipe(catchError(res => res.error.errors));
   }
 
+  signup(name, email, password): Observable<any> {
+    let newUser ={ name, email, password};
+
+    let headers = new HttpHeaders({
+      "Content-Type": "application/json",
+    });
+
+    return this.http.post(`${this.baseUrl}/sign-up`, newUser, { headers: headers })
+      .pipe(catchError(res => res.error.errors));
+  }
+
   //WORKSPACES
   getWorkspaces() {
     let headers = this.setHeadersWithToken();

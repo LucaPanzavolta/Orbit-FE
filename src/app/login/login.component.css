@@ -19,12 +19,14 @@
   border-radius: 20px;
 }
 
-#login-form {
+#login-form,
+#signup-form {
   display: flex;
   flex-direction: column;
   width: 250px;
   padding: 10px 20px 30px 20px;
 }
+
 
 mat-expansion-panel {
   margin-bottom: 2px;

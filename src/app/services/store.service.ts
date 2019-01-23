@@ -37,6 +37,21 @@ export class StoreService {
       }));
   }
 
+  signup(name ,email, password) {
+    return this.apiService.signup(name, email, password)
+      .pipe(map(res => {
+        //if successfull login
+        if (res.token) {
+          localStorage.setItem('currentUser', JSON.stringify(res));
+          //setting internal private property
+          this.currentUser = res;
+          //publishing data for subscribers
+          return this.currentUser;
+        }
+        return res;
+      }));
+  }
+
   getWorkspaces() {
     this.apiService.getWorkspaces()
       .subscribe((data: any) => {
