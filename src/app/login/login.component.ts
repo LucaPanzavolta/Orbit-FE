@@ -24,6 +24,10 @@ export class LoginComponent implements OnInit {
     Validators.required
   ]);
 
+  nameFormControl = new FormControl('', [
+    Validators.required
+  ]);
+
   login(): void {
     console.log('Login attempt.....');
     this.storeService.login(this.emailFormControl.value, this.passwordFormControl.value)
