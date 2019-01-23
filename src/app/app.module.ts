@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Angular Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatOptionModule, MatNativeDateModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatOptionModule, MatNativeDateModule, MatExpansionModule } from '@angular/material';
 import { WorkspacesComponent } from './workspaces/workspaces.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WorkspaceDetailComponent } from './workspace-detail/workspace-detail.component';
@@ -19,6 +19,9 @@ import { MatCardModule } from '@angular/material/card';
 import { ChartsModule } from 'ng2-charts';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSliderModule } from '@angular/material/slider';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SignupComponent } from './signup/signup/signup.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 
@@ -29,7 +32,9 @@ import { MatSliderModule } from '@angular/material/slider';
     LoginComponent,
     WorkspacesComponent,
     PageNotFoundComponent,
-    WorkspaceDetailComponent
+    WorkspaceDetailComponent,
+    HomePageComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
