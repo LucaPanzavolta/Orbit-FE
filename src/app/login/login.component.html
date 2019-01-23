@@ -1,16 +1,55 @@
 <div id="login-wrapper">
+    
+  <mat-accordion class="accordion-panel">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+          <mat-panel-title class="login-heading">
+              Login
+          </mat-panel-title>
+ 
+      </mat-expansion-panel-header>
+      
+      <form id="login-form" (ngSubmit)="login()">
+        <mat-form-field class="form-field">
+          <input matInput placeholder="Email" [formControl]="emailFormControl">
+        </mat-form-field>
+        
+        <mat-form-field class="form-field">
+          <input matInput placeholder="Password" [formControl]="passwordFormControl">
+        </mat-form-field>
+        
+        <div id="login-button">
+          <button mat-raised-button color="primary">Login</button>
+        </div>
+      </form>
+    </mat-expansion-panel>
 
-  <form id="login-form" (ngSubmit)="login()">
-    <mat-form-field class="form-field">
-      <input matInput placeholder="Email" [formControl]="emailFormControl">
-    </mat-form-field>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title class="login-heading">
+                Sign Up
+            </mat-panel-title>
+   
+        </mat-expansion-panel-header>
+        
+        <form id="login-form" (ngSubmit)="login()">
 
-    <mat-form-field class="form-field">
-      <input matInput placeholder="Password" [formControl]="passwordFormControl">
-    </mat-form-field>
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Name" [formControl]="nameFormControl">
+              </mat-form-field>
 
-    <div id="login-button">
-      <button mat-raised-button color="primary">Login</button>
-    </div>
-  </form>
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Email" [formControl]="emailFormControl">
+          </mat-form-field>
+          
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Password" [formControl]="passwordFormControl">
+          </mat-form-field>
+          
+          <div id="login-button">
+            <button mat-raised-button color="primary">Sign Up</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
 </div>

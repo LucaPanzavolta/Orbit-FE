@@ -39,7 +39,7 @@ export class StoreService {
 
   getWorkspaces() {
     this.apiService.getWorkspaces()
-      .subscribe(data => {
+      .subscribe((data: any) => {
         console.log('Retrieved workspaces in getWorkspaces (STORE S.) ', data);
         this.workspaces = data.workspaces;
         console.log('data.workspaces in getWorkspaces ', data.workspaces);

@@ -2,3 +2,11 @@
 
 /* Angular Material theme import  */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Muli font import  */
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+body {
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+}
