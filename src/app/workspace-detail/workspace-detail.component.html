@@ -14,7 +14,7 @@
       </mat-card-header>
       <mat-card-actions>
         <button mat-button (click)="showGraph(ent)">SEE STATS</button>
-        <button mat-button (click)="addSnapshot(ent)">ADD SNAPSHOT</button>
+        <button mat-button (click)="renderAddSnapshotCard(ent)">ADD SNAPSHOT</button>
       </mat-card-actions>
     </mat-card>
 
@@ -33,6 +33,7 @@
         <div *ngFor="let label of metricLabels">
           <mat-option value={{label}}>{{label}}</mat-option>
         </div>
+        <mat-option value="All">All</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -41,10 +42,8 @@
         [chartType]="barChartType" width="1000" height="500">
       </canvas>
     </div>
-    <button mat-raised-button color="primary" (click)="generateGraph()">Generate Graph</button>
-    <!-- <button mat-raised-button color="primary" (click)="comparing = true">Compare</button> -->
   </div>
-  <!-- Graph Endi -->
+  <!-- Graph End -->
 
   <!-- Add new Snapshot Card -->
   <div id="new-snapshot-card" *ngIf="addingSnapshot">
@@ -57,25 +56,25 @@
         <!-- Form beginning -->
         <div id="flex-form">
           <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="dateFormControl">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select placeholder="Select metric">
+            <mat-select placeholder="Select metric" [formControl]="metricForSnapshotFormControl">
               <div *ngFor="let label of metricLabels">
-                <mat-option value="label">{{label}}</mat-option>
+                <mat-option value={{label}}>{{label}}</mat-option>
               </div>
             </mat-select>
           </mat-form-field>
 
           <mat-form-field>
-            <input matInput type="number" placeholder="Score">
+            <input matInput type="number" placeholder="Score" [formControl]="scoreFormControl">
           </mat-form-field>
 
           <mat-form-field>
-            <textarea matInput placeholder="Comments"></textarea>
+            <textarea matInput placeholder="Comments" [formControl]="commentFormControl"></textarea>
           </mat-form-field>
 
         </div>
@@ -83,8 +82,9 @@
 
       </mat-card-content>
       <mat-card-actions>
-        <button id="add-snapshot-button" mat-button>CONFIRM</button>
+        <button id="add-snapshot-button" mat-button (click)="addNewSnapshot()">CONFIRM</button>
       </mat-card-actions>
     </mat-card>
   </div>
+  <!-- End of Add Snapshot Card -->
 </div>
