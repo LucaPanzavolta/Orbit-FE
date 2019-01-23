@@ -3,7 +3,7 @@
   margin: 0;
   background-color: #24273C;
   font-family: 'Muli';
-  padding: 33px 50px;
+  padding: 20px 0px;
   color: #fff;
 }
 
@@ -11,7 +11,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  padding-right: 45px;
 } 
 
 .logo-sm {
@@ -44,11 +44,13 @@ header {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 100px;
-  padding: 0px 25px;
+  padding: 0px 70px;
 }
 
 .text-panel {
   max-width: 500px;
+  margin-top: -20px;
+  margin-bottom: 20px;
 }
 
 .paragraph-header {
@@ -62,6 +64,7 @@ header {
   font-size: 19px;
   line-height: 26px;
   max-width: 480px;
+  margin-bottom: 60px;
 }
 
 .action-btn {

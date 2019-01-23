@@ -20,7 +20,7 @@ export class WorkspaceDetailComponent implements OnInit {
   id: String;
   entries: Array<any>;
   selectedEntity: any;
-  addingSnapshot: boolean = false;
+  addingSnapshot: any = false;
   metricLabels: Array<any>;
 
   showCorrectGraphFormControl = new FormControl('', [
