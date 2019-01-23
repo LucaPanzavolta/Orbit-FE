@@ -20,7 +20,7 @@ export class WorkspaceDetailComponent implements OnInit {
   id: String;
   entries: Array<any>;
   selectedEntity: any;
-  addingSnapshot: boolean = false;
+  addingSnapshot: any = false;
   metricLabels: Array<any>;
 
   showCorrectGraphFormControl = new FormControl('', [
@@ -77,7 +77,6 @@ export class WorkspaceDetailComponent implements OnInit {
 
       this.barChartLabels = ["Beginning", "End"];
 
-      console.log('THIS.BARCHARTDATA & THIS.BARCHARTLABELS', this.barChartData, this.barChartLabels);
     } else {
       //We enter this block of code if the metricToRender is not "All"
 
@@ -85,8 +84,6 @@ export class WorkspaceDetailComponent implements OnInit {
       let snapToShow = ent.snapshots.filter(snap => snap.label.toLowerCase() === metricToRender.toLowerCase());
       let dataY = snapToShow.map(snap => snap.score);
       let dataX = snapToShow.map(snap => moment(snap.date).format("Do MMM YY"));
-
-      console.log('x and y ', dataX, dataY);
 
       if (this.barChartData) {
         if (this.barChartData[1]) this.barChartData.splice(1, 1);
@@ -99,6 +96,7 @@ export class WorkspaceDetailComponent implements OnInit {
         this.barChartLabels = dataX;
       }
     }
+    console.log('THIS.BARCHARTDATA & THIS.BARCHARTLABELS', this.barChartData, this.barChartLabels);
   }
 
   renderAddSnapshotCard(ent) {

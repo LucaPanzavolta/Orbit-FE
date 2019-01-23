@@ -36,7 +36,6 @@ export class WorkspacesComponent implements OnInit {
 
   addWorkspace() {
     this.storeService.addWorkspace(this.categoryFormControl.value, this.wsNameFormControl.value, this.metricsArr);
-    console.log('Metrics Array', this.metricsArr);
   }
 
   addMetric() {
@@ -47,10 +46,8 @@ export class WorkspacesComponent implements OnInit {
 
   ngOnInit() {
     this.storeService.getWorkspaces()
-    /*  .subscribe(workspaces => this.workspaces = workspaces); */
 
     this.storeService.workspaces$.subscribe(workspaces => {
-      console.log('New workspaces received in component ', workspaces);
       this.workspaces = workspaces;
     });
   }

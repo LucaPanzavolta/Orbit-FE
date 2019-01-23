@@ -56,7 +56,6 @@ export class StoreService {
   getEntries(workspaceId) {
     this.apiService.getEntries(workspaceId)
       .subscribe(data => {
-        console.log('in store service ', data);
         this.entries = data;
         this.entries$.next(data);
       });
@@ -74,6 +73,3 @@ export class StoreService {
       });
   }
 }
-
-/* .pipe(map(response => { console.log('data in store service ', response); return this.entries = response }))
-.pipe(tap((entries: any[]) => this.entries$.next(entries))); */
