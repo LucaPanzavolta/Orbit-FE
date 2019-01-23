@@ -20,10 +20,6 @@ import { ChartsModule } from 'ng2-charts';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSliderModule } from '@angular/material/slider';
 import { HomePageComponent } from './home-page/home-page.component';
-import { SignupComponent } from './signup/signup/signup.component';
-import { RouterModule, Routes } from '@angular/router';
-
-
 
 
 @NgModule({
@@ -34,7 +30,6 @@ import { RouterModule, Routes } from '@angular/router';
     PageNotFoundComponent,
     WorkspaceDetailComponent,
     HomePageComponent,
-    SignupComponent
   ],
   imports: [
     BrowserModule,

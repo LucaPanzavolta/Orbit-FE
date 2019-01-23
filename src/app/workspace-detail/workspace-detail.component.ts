@@ -59,20 +59,20 @@ export class WorkspaceDetailComponent implements OnInit {
     if (!ent) ent = this.selectedEntity;
 
     //Check which metric the user wants to compare the entities against
-    let metricToRender = metric ? metric.value : this.metricLabels[0];
+    let metricToRender = metric ? metric.value.toLowerCase() : this.metricLabels[0].toLowerCase();
     console.log('Showing graph for metric', metricToRender);
 
     //Particular case from metric ALL - the data has to be manipulated differently
-    if (metricToRender === "All") {
+    if (metricToRender === "all") {
       let allMetricsArr = [];
       let dataY = {}
-      ent.snapshots.forEach(snap => !allMetricsArr.includes(snap.label) && allMetricsArr.push(snap.label));
+      ent.snapshots.forEach(snap => !allMetricsArr.includes(snap.label.toLowerCase()) && allMetricsArr.push(snap.label.toLowerCase()));
 
       allMetricsArr.forEach((label, index) => {
         let correctSnaps = ent.snapshots.filter(snap => snap.label === label);
         dataY[`${label}`] = [correctSnaps.shift().score, correctSnaps.pop().score];
 
-        this.barChartData[index] = { data: dataY[`${label}`], label: label }
+        this.barChartData[index] = { data: dataY[`${label}`], label: label };
       });
 
       this.barChartLabels = ["Beginning", "End"];
@@ -81,13 +81,14 @@ export class WorkspaceDetailComponent implements OnInit {
       //We enter this block of code if the metricToRender is not "All"
 
       //manipulation to prepare data for chart.js
-      let snapToShow = ent.snapshots.filter(snap => snap.label.toLowerCase() === metricToRender.toLowerCase());
+      let snapToShow = ent.snapshots.filter(snap => snap.label.toLowerCase() === metricToRender);
       let dataY = snapToShow.map(snap => snap.score);
       let dataX = snapToShow.map(snap => moment(snap.date).format("Do MMM YY"));
 
       if (this.barChartData) {
         if (this.barChartData[1]) this.barChartData.splice(1, 1);
         this.barChartData[0].data = dataY;
+        this.barChartData[0].label = metricToRender;
         this.barChartLabels = dataX;
       } else {
         this.barChartData = [
@@ -106,7 +107,7 @@ export class WorkspaceDetailComponent implements OnInit {
   addNewSnapshot() {
     //read all form fields
     let date = this.dateFormControl.value;
-    let label = this.metricForSnapshotFormControl.value;
+    let label = this.metricForSnapshotFormControl.value.toLowerCase();
     let score = this.scoreFormControl.value;
     let comment = this.commentFormControl.value;
     let payload = {
