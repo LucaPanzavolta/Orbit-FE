@@ -21,7 +21,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSliderModule } from '@angular/material/slider';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SignupComponent } from './signup/signup/signup.component';
-import { RouterModule, Routes } from '@angular/router';
 
 
 
@@ -53,6 +52,7 @@ import { RouterModule, Routes } from '@angular/router';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSliderModule,
+    MatExpansionModule,
     MatInputModule
 
   ],
