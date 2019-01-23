@@ -16,6 +16,7 @@ export class WorkspacesComponent implements OnInit {
   ) { }
 
   addingWorkspace: boolean = false;
+  metricsArr: Array<String> = [];
 
   categoryFormControl = new FormControl('', [
     Validators.required,
@@ -25,12 +26,22 @@ export class WorkspacesComponent implements OnInit {
     Validators.required
   ]);
 
+  metricsLabelFormControl = new FormControl('', [
+    Validators.required
+  ]);
+
   showForm() {
     this.addingWorkspace = true;
   }
 
   addWorkspace() {
-    this.storeService.addWorkspace(this.categoryFormControl.value, this.wsNameFormControl.value)
+    this.storeService.addWorkspace(this.categoryFormControl.value, this.wsNameFormControl.value, this.metricsArr);
+    console.log('Metrics Array', this.metricsArr);
+  }
+
+  addMetric() {
+    this.metricsArr.push(this.metricsLabelFormControl.value);
+    this.metricsLabelFormControl.reset('', { onlySelf: true });
   }
 
 

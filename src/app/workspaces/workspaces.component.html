@@ -57,6 +57,16 @@
           <input matInput placeholder="Workspace name" [formControl]="wsNameFormControl">
         </mat-form-field>
 
+        <mat-form-field>
+          <input matInput placeholder="Add metrics label" [formControl]="metricsLabelFormControl">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addMetric()">Add Metric</button>
+
+        <ul *ngFor="let metricLabel of metricsArr">
+          <li>{{metricLabel}}</li>
+        </ul>
+
+
       </div>
       <!-- Form End -->
 
