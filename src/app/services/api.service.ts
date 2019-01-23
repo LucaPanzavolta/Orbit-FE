@@ -29,6 +29,23 @@ export class ApiService {
       .pipe(catchError(res => res.error.errors));
   }
 
+  signup(name, email, password): Observable<any> {
+    let newUser ={ name, email, password};
+
+    let headers = new HttpHeaders({
+      "Content-Type": "application/json",
+    });
+
+    return this.http.post(`${this.baseUrl}/sign-up`, newUser, { headers: headers })
+      .pipe(catchError(res => res.error.errors));
+  }
+
+  verifyToken() {
+    let headers = this.setHeadersWithToken();
+    return this.http.get(`${this.baseUrl}/verify`, { headers: headers })
+      .pipe(catchError(res => res.error.errors));
+  }
+
   //WORKSPACES
   getWorkspaces() {
     let headers = this.setHeadersWithToken();
@@ -62,7 +79,7 @@ export class ApiService {
   setHeadersWithToken() {
     //get token from local storage
     let stored = JSON.parse(localStorage.getItem('currentUser'));
-    let token = stored.token;
+    let token =  stored && stored.token;
 
     let headers = new HttpHeaders({
       "Content-Type": "application/json",

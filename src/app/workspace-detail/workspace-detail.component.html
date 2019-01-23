@@ -1,5 +1,14 @@
-<h1>
-  Entries
+<div class="page-container">
+  <header>
+    <img src="./../../assets/orbit_trans.png" alt="" class="logo-sm">
+    
+    <ul class="header-links">
+      <li class="header-link"><a class="link-a" href="/dashboard">Dashboard</a></li>
+    </ul>
+  </header>
+
+  <h1>
+    Entries
 </h1>
 <button mat-raised-button color="primary" (click)="addWorkspace()">Add Entry</button>
 
@@ -17,7 +26,7 @@
         <button mat-button (click)="renderAddSnapshotCard(ent)">ADD SNAPSHOT</button>
       </mat-card-actions>
     </mat-card>
-
+    
   </div>
 </div>
 
@@ -36,15 +45,15 @@
         <mat-option value="All">All</mat-option>
       </mat-select>
     </mat-form-field>
-
+    
     <div style="display: block">
-      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
         [chartType]="barChartType" width="1000" height="500">
       </canvas>
     </div>
   </div>
   <!-- Graph End -->
-
+  
   <!-- Add new Snapshot Card -->
   <div id="new-snapshot-card" *ngIf="addingSnapshot">
     <mat-card>
@@ -60,7 +69,7 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-
+          
           <mat-form-field>
             <mat-select placeholder="Select metric" [formControl]="metricForSnapshotFormControl">
               <div *ngFor="let label of metricLabels">
@@ -72,7 +81,7 @@
           <mat-form-field>
             <input matInput type="number" placeholder="Score" [formControl]="scoreFormControl">
           </mat-form-field>
-
+          
           <mat-form-field>
             <textarea matInput placeholder="Comments" [formControl]="commentFormControl"></textarea>
           </mat-form-field>
@@ -87,4 +96,5 @@
     </mat-card>
   </div>
   <!-- End of Add Snapshot Card -->
+</div>
 </div>

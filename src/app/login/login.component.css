@@ -1,10 +1,56 @@
+.home-page-container {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #24273C;
+  font-family: 'Muli';
+  padding: 20px 0px;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: stretch;
+  padding-right: 45px;
+  padding-bottom: 140px;
+} 
+
+.logo-sm {
+  margin-top: 20px;
+  margin-left: 40px;
+  width: 80px;
+  height: 80px;
+}
+
+.header-links {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  margin-left: -20px;
+  padding-top: 30px;
+}
+
+.header-link {
+  list-style: none;
+}
+
+.header-link a  {
+  color: #8AF6B5; /* blue colors for links too */
+  font-weight: 400;
+  text-decoration: none; /* no underline */
+  margin-right: 58px;
+  font-size: 19px;
+}
+
 #login-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;  
   height: 100vh;
   background-color: #24273C;
   font-family: 'Muli';
-  padding-top: 150px;
 }
 
 .acccordion-panel {
@@ -19,12 +65,14 @@
   border-radius: 20px;
 }
 
-#login-form {
+#login-form,
+#signup-form {
   display: flex;
   flex-direction: column;
   width: 250px;
   padding: 10px 20px 30px 20px;
 }
+
 
 mat-expansion-panel {
   margin-bottom: 2px;

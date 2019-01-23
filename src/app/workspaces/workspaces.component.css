@@ -1,6 +1,51 @@
+.page-container {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Muli';
+  padding: 20px 0px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 45px;
+  background-color: #24273C;
+  padding: 10px;
+  margin: -20px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .75);
+} 
+
+.logo-sm {
+  margin-left: 40px;
+  width: 80px;
+  height: 80px;
+}
+
+.header-links {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  margin-left: -20px;
+  padding-top: 30px;
+}
+
+.header-link {
+  list-style: none;
+}
+
+.header-link a  {
+  color: white; /* blue colors for links too */
+  text-decoration: none; /* no underline */
+  margin-right: 58px;
+  font-size: 17px;
+}
+
 h1 {
   display: inline-block;
   margin-right: 30px;
+  margin-left: 30px;
+  color: #000;
 }
 
 .workspace-content {
@@ -11,6 +56,7 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 20px 40px;
 }
 
 .card {

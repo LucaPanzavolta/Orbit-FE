@@ -1,5 +1,15 @@
 <div id="login-wrapper">
-    
+
+  <header>
+      <a class="link-a" href="/">
+        <img src="./../../assets/orbit_trans.png" alt="" class="logo-sm">
+    </a>
+
+    <ul class="header-links">
+      <li class="header-link"><a class="link-a" href="/">Home</a></li>
+    </ul>
+  </header>
+
   <mat-accordion class="accordion-panel">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -24,7 +34,7 @@
       </form>
     </mat-expansion-panel>
 
-    <mat-expansion-panel>
+    <mat-expansion-panel >
         <mat-expansion-panel-header>
             <mat-panel-title class="login-heading">
                 Sign Up
@@ -32,7 +42,7 @@
    
         </mat-expansion-panel-header>
         
-        <form id="login-form" (ngSubmit)="login()">
+        <form id="signup-form" (ngSubmit)="signup()">
 
             <mat-form-field class="form-field">
                 <input matInput placeholder="Name" [formControl]="nameFormControl">
