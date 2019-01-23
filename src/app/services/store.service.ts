@@ -13,7 +13,7 @@ export class StoreService {
   public workspaces$: Subject<any> = new Subject();
 
   public entries;
-  private entries$: Subject<any[]> = new Subject();
+  public entries$: Subject<any[]> = new Subject();
 
   private currentUser: any;
   public currentUser$: Subject<any> = new Subject();
@@ -55,8 +55,23 @@ export class StoreService {
 
   getEntries(workspaceId) {
     this.apiService.getEntries(workspaceId)
-      .subscribe(data => { console.log('in store service ', data); this.entries$.next(data) });
-    return this.entries$;
+      .subscribe(data => {
+        console.log('in store service ', data);
+        this.entries = data;
+        this.entries$.next(data);
+      });
+  }
+
+  addNewSnapshot(workspaceId, entryId, payload) {
+    this.apiService.addNewSnapshot(workspaceId, entryId, payload)
+      .subscribe(snapshot => {
+        this.entries.filter(entry => entry._id == entryId)[0].snapshots.push(snapshot)
+        let index = this.entries.findIndex(entry => entry._id == entryId);
+        //updating store
+        this.entries[index].snapshots.push(snapshot);
+        //publishing
+        this.entries$.next(this.entries);
+      });
   }
 }
 

@@ -52,6 +52,12 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/dashboard/${workspaceId}`, { headers: headers });
   }
 
+  //SNAPSHOTS
+  addNewSnapshot(workspaceId, entryId, payload) {
+    let headers = this.setHeadersWithToken();
+    return this.http.post(`${this.baseUrl}/dashboard/${workspaceId}/${entryId}`, payload, { headers: headers });
+  }
+
   //HELPER FUNCTION
   setHeadersWithToken() {
     //get token from local storage
