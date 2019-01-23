@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Angular Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatOptionModule, MatNativeDateModule, MatExpansionModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatOptionModule, MatNativeDateModule, MatExpansionModule, MatIconModule } from '@angular/material';
 import { WorkspacesComponent } from './workspaces/workspaces.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WorkspaceDetailComponent } from './workspace-detail/workspace-detail.component';
@@ -50,6 +50,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatNativeDateModule,
     MatSliderModule,
     MatExpansionModule,
+    MatIconModule,
     MatInputModule
 
   ],

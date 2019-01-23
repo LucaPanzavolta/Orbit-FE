@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
+  panelOpenState = false;
+
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -28,13 +30,8 @@ export class LoginComponent implements OnInit {
     Validators.required
   ]);
 
-  checkForToken():void {
-    
-  }
-
-  login(): void {
-    console.log('Login attempt.....');
-    this.storeService.login(this.emailFormControl.value, this.passwordFormControl.value)
+  verifyToken():void {
+    this.storeService.verifyToken()
       .subscribe(res => {
         console.log('Data retrieved from login route ', res);
 
@@ -42,7 +39,18 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('/dashboard');
         } else {
           console.log(res);
-          alert(res);
+        }
+      });
+  }
+
+  login(): void {
+    console.log('Login attempt.....');
+    this.storeService.login(this.emailFormControl.value, this.passwordFormControl.value)
+      .subscribe(res => {
+        if (res.token) {
+          this.router.navigateByUrl('/dashboard');
+        } else {
+          console.log(res);
         }
       });
   }
@@ -53,18 +61,17 @@ export class LoginComponent implements OnInit {
       .subscribe(res => {
         console.log('Data retrieved from Sign Up route ', res);
 
-        if (res.token) {
+        if (res && res.token) {
           this.router.navigateByUrl('/dashboard');
         } else {
           console.log(res);
-          alert(res);
         }
       });
   }
 
 
   ngOnInit() {
-
+    this.verifyToken();
   }
 
 }

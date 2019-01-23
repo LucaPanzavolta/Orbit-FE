@@ -52,6 +52,21 @@ export class StoreService {
       }));
   }
 
+  verifyToken() {
+    return this.apiService.verifyToken()
+      .pipe( map((res: any) => {
+        // if token was found
+        if (res && res.token) {
+          localStorage.setItem('currentUser', JSON.stringify(res));
+          //setting internal private property
+          this.currentUser = res;
+          //publishing data for subscribers
+          return this.currentUser;
+        }
+        return res;
+      }));
+  }
+
   getWorkspaces() {
     this.apiService.getWorkspaces()
       .subscribe((data: any) => {
