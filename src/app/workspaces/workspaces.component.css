@@ -13,6 +13,7 @@ header {
   background-color: #24273C;
   padding: 5px 10px;
   margin: -20px;
+  margin-bottom: 0px;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .75);
 } 
 
@@ -46,6 +47,10 @@ h1 {
   margin-right: 30px;
   margin-left: 30px;
   color: #000;
+}
+
+add-workspace-btn {
+
 }
 
 .workspace-content {

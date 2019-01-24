@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   panelOpenState = false;
+  hide = true;
 
   emailFormControl = new FormControl('', [
     Validators.required,

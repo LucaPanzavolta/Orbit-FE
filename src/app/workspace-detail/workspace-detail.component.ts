@@ -91,6 +91,7 @@ export class WorkspaceDetailComponent implements OnInit {
       if (this.barChartData) {
         if (this.barChartData[1]) this.barChartData.splice(1, 1);
         this.barChartData[0].data = dataY;
+        this.barChartData[0].label = metricToRender;
         this.barChartLabels = dataX;
       } else {
         this.barChartData = [

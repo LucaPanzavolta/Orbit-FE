@@ -7,12 +7,12 @@
     </ul>
   </header>
 
+  <h1>
+    Workspaces
+  </h1>
+  <button class="add-workspace-btn" mat-raised-button color="primary" (click)="showForm()">Add Workspace</button>
   
   <div class="workspace-content" *ngIf="workspaces && workspaces.length">
-    <h1>
-      Workspaces
-    </h1>
-    <button mat-raised-button color="primary" (click)="showForm()">Add Workspace</button>
 
     <div class="flex-workspaces-wrapper">
       <div *ngFor="let ws of workspaces">
