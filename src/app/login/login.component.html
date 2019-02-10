@@ -25,7 +25,7 @@
         </mat-form-field>
         
         <mat-form-field class="form-field">
-          <input matInput placeholder="Password" [formControl]="passwordFormControl">
+          <input matInput placeholder="Password" [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'">
         </mat-form-field>
         
         <div id="login-button">
@@ -53,7 +53,7 @@
           </mat-form-field>
           
           <mat-form-field class="form-field">
-            <input matInput placeholder="Password" [formControl]="passwordFormControl">
+            <input matInput placeholder="Password" [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'">
           </mat-form-field>
           
           <div id="login-button">

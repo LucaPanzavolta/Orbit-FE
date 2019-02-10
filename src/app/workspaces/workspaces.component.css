@@ -11,15 +11,16 @@ header {
   justify-content: space-between;
   padding-right: 45px;
   background-color: #24273C;
-  padding: 10px;
+  padding: 5px 10px;
   margin: -20px;
+  margin-bottom: 0px;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .75);
 } 
 
 .logo-sm {
   margin-left: 40px;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 
 .header-links {
@@ -27,7 +28,7 @@ header {
   flex-direction: row;
   margin: 0;
   margin-left: -20px;
-  padding-top: 30px;
+  padding-top: 15px;
 }
 
 .header-link {
@@ -46,6 +47,10 @@ h1 {
   margin-right: 30px;
   margin-left: 30px;
   color: #000;
+}
+
+add-workspace-btn {
+
 }
 
 .workspace-content {

@@ -39,6 +39,10 @@ header {
   font-size: 17px;
 }
 
+.header-link .blue-link {
+  color: #488CF4;
+}
+
 .main {
   display: flex;
   flex-direction: row;
@@ -81,6 +85,7 @@ header {
 }
 
 .snapshot-panel {
+  display: flex;
   min-width:300px;
   min-height: 300px;
   width:600px;
@@ -88,6 +93,14 @@ header {
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, .75);
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.snapshot-panel img-graph {
+  width: 580px;
+  height: 580px;
 }
 
 .overlay-background {
