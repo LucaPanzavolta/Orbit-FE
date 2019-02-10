@@ -12,7 +12,7 @@ Orbit is an open-source data visualisation tool that allows businesses, sports t
 * [Chart.js](https://www.chartjs.org/)
 * [Angular Material](https://material.angular.io/)
 
-### Back-end:[Orbit-server](https://github.com/LucaPanzavolta/orbit-server)
+### Back-end: [Orbit-server](https://github.com/LucaPanzavolta/orbit-server)
 
 * [Node.js](https://nodejs.org/en/)
 * [Koa](https://koajs.com/)
