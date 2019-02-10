@@ -1,0 +1,131 @@
+.home-page-container {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #24273C;
+  font-family: 'Muli';
+  padding: 20px 0px;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 45px;
+} 
+
+.logo-sm {
+  margin-left: 40px;
+  width: 80px;
+  height: 80px;
+}
+
+.header-links {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  margin-left: -20px;
+  padding-top: 30px;
+}
+
+.header-link {
+  list-style: none;
+}
+
+.header-link a  {
+  color: inherit; /* blue colors for links too */
+  text-decoration: none; /* no underline */
+  margin-right: 58px;
+  font-size: 17px;
+}
+
+.header-link .blue-link {
+  color: #488CF4;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 100px;
+  padding: 0px 70px;
+}
+
+.text-panel {
+  max-width: 500px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.paragraph-header {
+  font-size: 45px;
+  font-weight: 200;
+  line-height: 70px;
+  margin-bottom: 50px;
+}
+
+.paragraph-text {
+  font-size: 19px;
+  line-height: 26px;
+  max-width: 480px;
+  margin-bottom: 60px;
+}
+
+.action-btn {
+  margin-top: 50px;
+  background: #488CF4;
+  color: #ffffff;
+  position: relative;
+  z-index: 5;
+}
+
+.snapshot-wrapper {
+  padding-right: 70px;
+  z-index: 2;
+}
+
+.snapshot-panel {
+  display: flex;
+  min-width:300px;
+  min-height: 300px;
+  width:600px;
+  height:600px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, .75);
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.snapshot-panel img-graph {
+  width: 580px;
+  height: 580px;
+}
+
+.overlay-background {
+  margin-top: -700px;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+
+.overlay-green {
+  margin-top: 300px;
+  margin-left: -100px;
+  height: 100px;
+  width: 150%;
+  z-index: -1;
+  background-color: rgb(138, 246, 181);
+  -webkit-transform: rotate(-22deg);
+  transform: rotate(-22deg);
+}
+
+.overlay-white {
+  width: 150%;
+  margin-top: -90px;
+  -webkit-transform: rotate(-22deg);
+  transform: rotate(-22deg);
+  height: 1000px;
+  background-color: white;
+}

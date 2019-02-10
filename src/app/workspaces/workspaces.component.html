@@ -1,0 +1,88 @@
+<div class="page-container">
+  <header>
+    <img src="./../../assets/orbit_trans.png" alt="" class="logo-sm">
+
+    <ul class="header-links">
+      <li class="header-link"><a class="link-a" href="/">Home</a></li>
+    </ul>
+  </header>
+
+  <h1>
+    Workspaces
+  </h1>
+  <button class="add-workspace-btn" mat-raised-button color="primary" (click)="showForm()">Add Workspace</button>
+  
+  <div class="workspace-content" *ngIf="workspaces && workspaces.length">
+
+    <div class="flex-workspaces-wrapper">
+      <div *ngFor="let ws of workspaces">
+
+        <a routerLink="/dashboard/{{ws._id}}">
+          <!-- Workspaces cards -->
+          <mat-card class="card">
+            <mat-card-header>
+              <div mat-card-avatar class="image"></div>
+              <mat-card-title>{{ws.name}}</mat-card-title>
+              <mat-card-subtitle>Organization</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/organization.jpg" alt="logo">
+            <mat-card-content>
+              <p>
+                Bird's eye view of the employee/students within Codeworks.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button>SEE STATS</button>
+              <button mat-raised-button>EDIT</button>
+            </mat-card-actions>
+          </mat-card>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- To add new workspace -->
+  <div id="new-workspace-card" *ngIf="addingWorkspace">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Add new Workspace</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <!-- Form beginning -->
+        <div id="flex-form">
+
+          <mat-form-field>
+            <mat-select placeholder="Category" [formControl]="categoryFormControl">
+              <mat-option value="business">Business</mat-option>
+              <mat-option value="school">School</mat-option>
+              <mat-option value="sport">Sport Team</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Workspace name" [formControl]="wsNameFormControl">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Add metrics label" [formControl]="metricsLabelFormControl">
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="addMetric()">Add Metric</button>
+
+          <ul *ngFor="let metricLabel of metricsArr">
+            <li>{{metricLabel}}</li>
+          </ul>
+
+
+        </div>
+        <!-- Form End -->
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button id="save-button" mat-button (click)="addWorkspace()">CONFIRM</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
