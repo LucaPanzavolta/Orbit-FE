@@ -1,27 +1,44 @@
-# OrbitFe
+# Orbit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
+## What is Orbit?
+Orbit-server is the back-end for [Orbit](https://github.com/LucaPanzavolta/Orbit-FE) , an open-source data visualisation tool that allows businesses, sports teams and educational institutions track, measure and improve performance. Built using cutting-edge technologies, Orbit provides a birds-eye-view on performance metrics in a way that is easy to understand and digest. Students, players and employees are presented with key changes they can make to improve the performance through a complex neural networks, helping users focus their time more effectively and efficiently.
 
-## Development server
+## Tech Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Front-end: [Orbit-FE](https://github.com/LucaPanzavolta/Orbit-FE)
+* [Angular](https://angular.io/)
+* [RxJS](https://rxjs-dev.firebaseapp.com/)
+* [Chart.js](https://www.chartjs.org/)
+* [Angular Material](https://material.angular.io/)
 
-## Code scaffolding
+### Back-end
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [Node.js](https://nodejs.org/en/)
+* [Koa](https://koajs.com/)
+* [MongoDB](https://www.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/)
+* [Heroku](https://www.heroku.com/)
 
-## Build
+## Screenshots
+![homepage](Screenshots/homepage.png)
+![product detail](Screenshots/workspaces.png)
+![entries](Screenshots/entries.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Getting started
+After cloning the repo, install the dependencies with:
 
-## Running unit tests
+`npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+When the installation is finished, simply lauch the app with:
 
-## Running end-to-end tests
+`ng serve --open`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+**Happy hacking!!**
 
-## Further help
+## Contributors
+* Uros C - [ross-u](https://github.com/ross-u)
+* Luca Panzavolta - [LucaPanzavolta](https://github.com/LucaPanzavolta)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+As this is a 100% open source project all contributions and pull requests will be highly welcomed!
+
+
