@@ -39,8 +39,8 @@ When the installation is finished, simply lauch the app with:
 **Happy hacking!!**
 
 ## Contributors
-* Uros C - [ross-u](https://github.com/ross-u)
-* Luca Panzavolta - [LucaPanzavolta](https://github.com/LucaPanzavolta)
+* Uros C - [ross-u](https://github.com/ross-u) - [Linkedin](https://www.linkedin.com/in/uros-cirkovic)
+* Luca Panzavolta - [LucaPanzavolta](https://github.com/LucaPanzavolta) - [Linkedin](https://www.linkedin.com/in/lucapanzavolta)
 
 As this is a 100% open source project all contributions and pull requests will be highly welcomed!
 
